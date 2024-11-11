@@ -10,9 +10,8 @@ config.colors = {
 config.window_background_opacity = 0.85
 
 -- font
-config.font = wezterm.font("Reddit Mono", { weight = "DemiBold" })
-config.font_dirs = { "~/Library/Fonts/" }
-config.font_size = 13
+config.font = wezterm.font("MesloLGS Nerd Font Mono")
+config.font_size = 10
 
 -- keymaps
 local act = wezterm.action
