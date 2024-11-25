@@ -29,8 +29,10 @@ config.keys = {
 			end),
 		}),
 	},
-	{ key = "j", mods = "ALT", action = act.ActivateTabRelative(-1) },
-	{ key = "k", mods = "ALT", action = act.ActivateTabRelative(1) },
+	{ key = "j", mods = "ALT", description = "Switch to left tab", action = act.ActivateTabRelative(-1) },
+	{ key = "k", mods = "ALT", description = "Switch to right tab", action = act.ActivateTabRelative(1) },
+	{ key = "j", mods = "CTRL|ALT", description = "Move current tab to the left", action = act.MoveTabRelative(-1) },
+	{ key = "k", mods = "CTRL|ALT", description = "Move current tab to the right", action = act.MoveTabRelative(1) },
 }
 
 return config
