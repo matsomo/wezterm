@@ -1,6 +1,18 @@
 local wezterm = require("wezterm")
-
 local config = wezterm.config_builder()
+
+-- window
+config.hide_tab_bar_if_only_one_tab = true
+config.window_decorations = "RESIZE"
+config.window_padding = {
+	top = 10,
+	bottom = 10,
+	left = 10,
+	right = 10,
+}
+config.term = "xterm-256color"
+config.initial_rows = 48
+config.initial_cols = 150
 
 -- colors
 config.color_scheme = "Tokyo Night"
@@ -12,7 +24,7 @@ config.window_background_opacity = 0.85
 -- font
 config.font = wezterm.font("Comic Mono")
 config.font_dirs = { "~/Library/Fonts/" }
-config.font_size = 12
+config.font_size = 16
 
 -- keymaps
 local act = wezterm.action
@@ -29,10 +41,11 @@ config.keys = {
 			end),
 		}),
 	},
-	{ key = "j", mods = "ALT", description = "Switch to left tab", action = act.ActivateTabRelative(-1) },
-	{ key = "k", mods = "ALT", description = "Switch to right tab", action = act.ActivateTabRelative(1) },
-	{ key = "j", mods = "CTRL|ALT", description = "Move current tab to the left", action = act.MoveTabRelative(-1) },
-	{ key = "k", mods = "CTRL|ALT", description = "Move current tab to the right", action = act.MoveTabRelative(1) },
+	-- deprecated: now used with tmux
+	-- { key = "j", mods = "ALT", description = "Switch to left tab", action = act.ActivateTabRelative(-1) },
+	-- { key = "k", mods = "ALT", description = "Switch to right tab", action = act.ActivateTabRelative(1) },
+	-- { key = "j", mods = "CTRL|ALT", description = "Move current tab to the left", action = act.MoveTabRelative(-1) },
+	-- { key = "k", mods = "CTRL|ALT", description = "Move current tab to the right", action = act.MoveTabRelative(1) },
 }
 
 return config
