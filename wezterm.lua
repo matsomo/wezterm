@@ -24,7 +24,7 @@ config.window_background_opacity = 0.85
 -- font
 config.font = wezterm.font("Comic Mono")
 config.font_dirs = { "~/Library/Fonts/" }
-config.font_size = 16
+config.font_size = 14
 
 -- keymaps
 local act = wezterm.action
